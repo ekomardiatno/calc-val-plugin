@@ -1,0 +1,35 @@
+<table>
+  <tbody>
+    <tr class="calc-val">
+      <td><input type="text" class="var-calc" data-attr='data1'></td>
+      <td><input type="text" class="var-calc" data-attr='data2'></td>
+      <td><input type="text" class="var-calc" data-attr='data3'></td>
+      <td><input type="text" class="var-calc" data-attr='data4'></td>
+      <td><input type="text" class="res-calc" ></td>
+    </tr>
+  </tbody>
+</table>
+<button type="button" class="btn-tambah">Tambah</button>
+<script
+  src="https://code.jquery.com/jquery-3.4.1.min.js"
+  integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
+  crossorigin="anonymous"></script>
+<script src="calc-val.js"></script>
+<script>
+  $('.calc-val').calcVal('({data1}+{data2}+{data3})*{data4}')
+</script>
+
+<script>
+  $('.btn-tambah').on('click', function () {
+    var html = '<tr class="calc-val">'+
+      '<td><input type="text" class="var-calc" data-attr="data1"></td>'+
+      '<td><input type="text" class="var-calc" data-attr="data2"></td>'+
+      '<td><input type="text" class="var-calc" data-attr="data3"></td>'+
+      '<td><input type="text" class="var-calc" data-attr="data4"></td>'+
+      '<td><input type="text" class="res-calc" ></td>'+
+    '</tr>'
+
+    $('table tbody').append(html)
+    $('.calc-val').calcVal('({data1}+{data2}+{data3})*{data4}')
+  })
+</script>
